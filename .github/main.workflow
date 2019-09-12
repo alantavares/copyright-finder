@@ -1,5 +1,5 @@
 workflow "Continuous Integration (CI)" {
-  on = "push"
+  on = "pull_request"
   resolves = [
     "build",
     "lint",
