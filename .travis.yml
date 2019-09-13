@@ -6,4 +6,4 @@ before_install:
 before_script:
   - composer install
 script:
-  - composer lint
+  - composer test
