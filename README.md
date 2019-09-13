@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/alantavares/copyright-finder.svg?branch=master)](https://travis-ci.org/alantavares/copyright-finder)
+
 # php-boilerplate
 A skeleton to start new high-quality PHP projects without worrying about bootstrapping everything from scratch.
 
