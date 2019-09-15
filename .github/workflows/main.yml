@@ -15,19 +15,19 @@ jobs:
       - name: PHP Lint
         uses: actions/docker/cli@master
         with:
-          args: composer lint
+          args: build --target lint .
 
       - name: PHP Code Sniffer
         uses: actions/docker/cli@master
         with:
-          args: composer phpcs .
+          args: build --target phpcs .
 
       - name: PHP Static Analysis
         uses: actions/docker/cli@master
         with:
-          args: composer phpstan
+          args: build --target phpstan .
 
       - name: PHP Unit Tests
         uses: actions/docker/cli@master
         with:
-          args: composer phpunit
+          args: build --target phpunit .
