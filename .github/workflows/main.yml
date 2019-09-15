@@ -3,6 +3,7 @@ on: push
 jobs:
   ci:
     name: CI
+    runs-on: ubuntu-18.04
     steps:
       - name: Build enviroment
         uses: actions/docker/cli@master
