@@ -6,24 +6,28 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@master
-      - uses: actions/docker/cli@master
       
       - name: Build enviroment
+        uses: actions/docker/cli@master
         with:
           args: build --target ci .
 
       - name: PHP Lint
+        uses: actions/docker/cli@master
         with:
           args: composer lint
 
       - name: PHP Code Sniffer
+        uses: actions/docker/cli@master
         with:
           args: composer phpcs .
 
       - name: PHP Static Analysis
+        uses: actions/docker/cli@master
         with:
           args: composer phpstan
 
       - name: PHP Unit Tests
+        uses: actions/docker/cli@master
         with:
           args: composer phpunit
