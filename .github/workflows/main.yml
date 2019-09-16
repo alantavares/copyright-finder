@@ -13,21 +13,21 @@ jobs:
           args: build --target ci .
 
       - name: PHP Lint
-        uses: actions/docker/cli@master
+        uses: MilesChou/composer-action@master
         with:
-          args: build --target lint .
+          args: lint
 
       - name: PHP Code Sniffer
-        uses: actions/docker/cli@master
+        uses: MilesChou/composer-action@master
         with:
-          args: build --target phpcs .
+          args: phpcs
 
       - name: PHP Static Analysis
-        uses: actions/docker/cli@master
+        uses: MilesChou/composer-action@master
         with:
-          args: build --target phpstan .
+          args: phpstan
 
       - name: PHP Unit Tests
-        uses: actions/docker/cli@master
+        uses: MilesChou/composer-action@master
         with:
-          args: build --target phpunit .
+          args: phpunit
