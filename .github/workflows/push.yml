@@ -5,6 +5,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
+    - name: build
+      uses: actions/docker/cli@master
+      with:
+        args: build --target ci .
     - name: phpunit
       uses: actions/docker/cli@master
       with:
@@ -21,7 +25,4 @@ jobs:
       uses: actions/docker/cli@master
       with:
         args: build --target lint .
-    - name: build
-      uses: actions/docker/cli@master
-      with:
-        args: build --target ci .
+    
