@@ -1,0 +1,27 @@
+on: pull_request
+name: Continuous Integration (CI)
+jobs:
+  phpunit:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: phpunit
+      uses: actions/docker/cli@master
+      with:
+        args: build --target phpunit .
+    - name: phpstan
+      uses: actions/docker/cli@master
+      with:
+        args: build --target phpstan .
+    - name: phpcs
+      uses: actions/docker/cli@master
+      with:
+        args: build --target phpcs .
+    - name: lint
+      uses: actions/docker/cli@master
+      with:
+        args: build --target lint .
+    - name: build
+      uses: actions/docker/cli@master
+      with:
+        args: build --target ci .
