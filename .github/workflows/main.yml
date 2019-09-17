@@ -18,9 +18,8 @@ jobs:
       #     args: lint
 
       - name: PHP Code Sniffer
-        uses: MilesChou/composer-action@master
-        with:
-          args: phpcs
+        uses: actions/docker/cli@master
+        run: composer phpcs
 
       # - name: PHP Static Analysis
       #   uses: MilesChou/composer-action@master
