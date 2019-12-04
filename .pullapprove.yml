@@ -3,8 +3,8 @@ approve_regex: ^Approved
 reject_regex: ^Rejected
 reset_on_push: false
 reviewers:
-    -
-        name: devs
-        required: 1
-        members:
-            - alantavares
+ -
+   name: devs
+   required: 1
+   members:
+     - alantavares
