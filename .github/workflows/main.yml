@@ -1,0 +1,32 @@
+name: Continuous Integration (CI)
+on: push
+jobs:
+  ci:
+    name: CI
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@master
+      
+      - name: Build enviroment
+        uses: actions/docker/cli@master
+        with:
+          args: build --target ci .
+
+      # - name: PHP Lint
+      #   uses: MilesChou/composer-action@master
+      #   with:
+      #     args: lint
+
+      - name: PHP Code Sniffer
+        uses: actions/docker/cli@master
+        run: composer phpcs
+
+      # - name: PHP Static Analysis
+      #   uses: MilesChou/composer-action@master
+      #   with:
+      #     args: phpstan
+
+      # - name: PHP Unit Tests
+      #   uses: MilesChou/composer-action@master
+      #   with:
+      #     args: phpunit

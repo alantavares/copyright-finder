@@ -49,6 +49,18 @@
             "phpstan analyse",
             "phpunit"
         ],
+        "lint": [
+            "parallel-lint . --exclude vendor"
+        ],
+        "phpcs": [
+            "phpcs"
+        ],
+        "phpstan": [
+            "phpstan analyse"
+        ],
+        "phpunit": [
+            "phpunit"
+        ],
         "coverage": [
             "phpunit --coverage-html reports/"
         ]
