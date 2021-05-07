@@ -1,0 +1,14 @@
+---
+  kind: pipeline
+  type: docker
+  name: Testando
+  
+  clone:
+    disable: true
+    
+  steps:
+
+    - name: clone
+      image: drone/git
+      commands:
+        - git clone --depth 1 --branch $DRONE_SOURCE_BRANCH https://github.com/alantavares/copyright-finder.git .
