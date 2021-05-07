@@ -4,12 +4,13 @@
   name: Testando
   
   clone:
-    depth: 1
-    branch: $DRONE_BRANCH
+    disable: true
     
   steps:
 
-    - name: clone_lambinho
-      image: drone/git
+    - name: clone
+      image: drone/git:1.2.0-linux-arm64
       commands:
-        - ls -lha
+        - git clone --depth 1 https://github.com/alantavares/copyright-finder.git .
+        - ls
+        
