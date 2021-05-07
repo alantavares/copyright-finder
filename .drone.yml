@@ -8,7 +8,7 @@
     
   steps:
 
-    - name: clone
+    - name: clone_lambinho
       image: drone/git
       commands:
         - ls -lha
