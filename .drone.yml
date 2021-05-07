@@ -9,7 +9,7 @@
   steps:
 
     - name: clone
-      image: drone/git:1.2.0-linux-arm64
+      image: drone/git:1.2.0-linux-amd64
       commands:
         - git clone --depth 1 https://github.com/alantavares/copyright-finder.git .
         - ls
