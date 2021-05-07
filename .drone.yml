@@ -4,7 +4,8 @@
   name: Testando
   
   clone:
-    disable: false
+    depth: 1
+    branch: $DRONE_BRANCH
     
   steps:
 
